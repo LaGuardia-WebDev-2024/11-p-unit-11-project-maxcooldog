@@ -10,6 +10,37 @@ setup = function() {
      text("❆", snowX[i], snowY[i]);
    }
    
+var favAnimal = ["🐧", "🧊"];
+fill(255,255,255);
+textSize(40);
+
+var animalNum = 0;
+while(animalNum < favAnimal.length){
+text(favAnimal[animalNum], 110, 210 + animalNum*70);
+animalNum++
+}
+
+var favAnimal = ["🐧", "🧊"];
+fill(255,255,255);
+textSize(40);
+
+var animalNum = 0;
+while(animalNum < favAnimal.length){
+text(favAnimal[animalNum], 110, 210 + animalNum*70);
+animalNum++
+}
+
+var favAnimal = ["🐧", "🧊"];
+fill(255,255,255);
+textSize(40);
+
+var animalNum = 0;
+while(animalNum < favAnimal.length){
+text(favAnimal[animalNum], 110, 210 + animalNum*70);
+animalNum++
+}
+
+
    fill(255,255,255);
    rect(-10, 300, 610, 150);
 
