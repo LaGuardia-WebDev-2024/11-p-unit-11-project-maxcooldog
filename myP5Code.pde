@@ -1,49 +1,55 @@
-var snowX = [100, 120, 160, 200];
-var snowY = [50, 70, 40, 20];
+var xPositions = [100,300,200];
+var yPositions = [200,230,330];
+snowX=[];
+snowY=[];
+snowflakeX=[];
+snowflakeY=[];
 
 setup = function() {
-   size(600, 450); 
-   background(164, 212, 255);
+  size(600, 400);
+
+   for (var i = 10; i < 40; i++) {
+     snowX.push(random(-20,600));
+     snowY.push(random(0,400));
+     snowflakeX.push(random(-20,600));
+     snowflakeY.push(random(0,400));
+    }
+}
+
+var newInd=15;
+draw = function(){
+  background(193, 235, 245,0);
+  if (mousePressed){
+xPositions.push(mouseX);
+yPositions.push(mouseY);
+  }
+ 
+  drawSnow();
+   textSize(20);
+      for (var i = 5; i < snowY.length; i++) {
+        text("🌨️", snowX[i], snowY[i]);
+        snowY[i]++;
+        if(snowY[i]>400){
+        snowY[i]=-20;
+        snowX[i]=random(0,600);
+        }
+    }
+
+ textSize(35);
+   for (var i = 5; i < snowflakeY.length; i++) {
+        text("❄️", snowflakeX[i], snowflakeY[i]);
+        snowflakeY[i]++;
+        if(snowflakeY[i]>400){
+        snowflakeY[i]=-20;
+        snowflakeX[i]=random(0,600);
+        }
+      }
+  }
   
-   textSize(40);
-   for(var i = 0; i < snowX.length; i++){
-     text("❆", snowX[i], snowY[i]);
-   }
-   
-var favAnimal = ["🐧", "🧊"];
-fill(255,255,255);
-textSize(40);
-
-var animalNum = 0;
-while(animalNum < favAnimal.length){
-text(favAnimal[animalNum], 110, 210 + animalNum*70);
-animalNum++
-}
-
-var favAnimal = ["🐧", "🧊"];
-fill(255,255,255);
-textSize(40);
-
-var animalNum = 0;
-while(animalNum < favAnimal.length){
-text(favAnimal[animalNum], 110, 210 + animalNum*70);
-animalNum++
-}
-
-var favAnimal = ["🐧", "🧊"];
-fill(255,255,255);
-textSize(40);
-
-var animalNum = 0;
-while(animalNum < favAnimal.length){
-text(favAnimal[animalNum], 110, 210 + animalNum*70);
-animalNum++
-}
-
-
-   fill(255,255,255);
-   rect(-10, 300, 610, 150);
-
-}
-
-
+var drawSnow = function() {
+    textSize(15);
+    for (var i = 5; i < yPositions.length; i++) {
+        text("☃️", xPositions[i], yPositions[i]);
+        yPositions[i]++;
+    }
+};
